@@ -1,0 +1,62 @@
+site_name: PLAXIS 3D Automation Reference
+site_description: Practical Python automation for PLAXIS 3D — scripts, recipes, and a full reference.
+site_author: Philip Chin Fung Tsang
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - toc:
+      permalink: true
+plugins:
+  - search
+  - tags
+nav:
+  - Home: index.md
+  - Get started:
+      - Install & Setup: get-started/install.md
+      - Project Structure: get-started/folder-structure.md
+      - First Run: get-started/first-run.md
+  - Concepts:
+      - Remote Scripting: concepts/remote-scripting.md
+      - Batching & Logging: concepts/batching-and-logging.md
+      - Config JSONs: concepts/config-jsons.md
+  - API:
+      - plaxis.py: api/plaxis.py.md
+      - Helpers: api/helpers.md
+  - Recipes:
+      - Create Model from JSON: recipes/create-model-from-json.md
+      - Soil Layering from CSV: recipes/soil-layering-from-csv.md
+      - Parametric Study: recipes/run-parametric-study.md
+      - Extract Results to Pandas: recipes/extract-results-to-pandas.md
+      - Visualize Displacements: recipes/visualize-displacements.md
+  - Troubleshooting:
+      - Connection errors: troubleshooting/connection-errors.md
+      - Long runs & timeouts: troubleshooting/long-runs-and-timeouts.md
+      - Geometry gotchas: troubleshooting/geometry-gotchas.md
+  - Reference:
+      - CLI: reference/cli.md
+      - Config Schema: reference/config-schema.md
+  - Examples:
+      - Simple Tunnel: examples/ex01-simple-tunnel.md
+      - Cross Passage (AGF): examples/ex02-cross-passage-agf.md
+      - Batch Calcs: examples/ex03-batch-calcs.md
+  - Appendix:
+      - FAQ: appendix/faq.md
+      - Changelog: appendix/changelog.md

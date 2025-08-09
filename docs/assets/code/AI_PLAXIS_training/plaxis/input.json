@@ -1,0 +1,33 @@
+{
+  "project": "ex01_simple_tunnel",
+  "geometry": {
+    "diameter_m": 6.0,
+    "length_m": 50.0,
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "start_xyz": [
+      0,
+      0,
+      0
+    ]
+  },
+  "materials": {
+    "soil": "Silty Sand",
+    "E50_MPa": 25
+  },
+  "staging": [
+    {
+      "name": "exc_1",
+      "advance_m": 1.0
+    }
+  ],
+  "outputs": [
+    "ux",
+    "uy",
+    "uz",
+    "sigma1"
+  ]
+}

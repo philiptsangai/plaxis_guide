@@ -1,0 +1,16 @@
+{
+  "Silty Sand": {
+    "gamma_kN_m3": 19.5,
+    "E50_MPa": 25,
+    "nu": 0.3,
+    "c_kPa": 5,
+    "phi_deg": 32
+  },
+  "Clay": {
+    "gamma_kN_m3": 18.0,
+    "E50_MPa": 12,
+    "nu": 0.35,
+    "c_kPa": 18,
+    "phi_deg": 22
+  }
+}
