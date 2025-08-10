@@ -1,0 +1,40 @@
+{
+  "runs": [
+    {
+      "id": "d6_L50",
+      "project": "ex01_simple_tunnel",
+      "geometry": {
+        "diameter_m": 6.0,
+        "length_m": 50.0
+      },
+      "materials": {
+        "soil": "Silty Sand",
+        "E50_MPa": 25
+      },
+      "staging": [
+        {
+          "name": "exc_1",
+          "advance_m": 1.0
+        }
+      ]
+    },
+    {
+      "id": "d7_L50",
+      "project": "ex01_simple_tunnel",
+      "geometry": {
+        "diameter_m": 7.0,
+        "length_m": 50.0
+      },
+      "materials": {
+        "soil": "Silty Sand",
+        "E50_MPa": 25
+      },
+      "staging": [
+        {
+          "name": "exc_1",
+          "advance_m": 1.0
+        }
+      ]
+    }
+  ]
+}

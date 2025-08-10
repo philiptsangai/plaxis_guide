@@ -1,13 +1,15 @@
-# First Run
+# First Run (Handshake Verification)
 
-Minimal handshake to confirm the PLAXIS remote server works:
+Use the tiny script created in **Install & Setup → Step 3** to verify everything is wired up.
 
-```python
-# try_plaxis_handshake.py
-from plxscripting.easy import new_server
-s, g = new_server('localhost', 10000, password='your_password')
-print(g.version)
-s.close()
+**Run:**
+```bash
+python docs/assets/code/connect_plaxis3d.py
 ```
 
-If you see a version string printed, you're set. Next, run the simplest end‑to‑end recipe in **Recipes → Create Model from JSON**.
+**Expected:**
+- PLAXIS 3D opens (or focuses if already open) and shows **SERVER ACTIVE**.
+- Terminal prints: `Connected. PLAXIS version: <version>`
+- No errors → you’re ready to build models and run calculations from Python.
+
+> Tip: If PLAXIS is already open, you can enable the server from within PLAXIS and just run the `new_server(...)` part to connect.
