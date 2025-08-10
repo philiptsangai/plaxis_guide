@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#first-run" class="md-skip">
+        <a href="#first-run-handshake-verification" class="md-skip">
           Skip to content
         </a>
       
@@ -1389,15 +1389,18 @@
 
 
 
-<h1 id="first-run">First Run<a class="headerlink" href="#first-run" title="Permanent link">&para;</a></h1>
-<p>Minimal handshake to confirm the PLAXIS remote server works:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># try_plaxis_handshake.py</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">plxscripting.easy</span><span class="w"> </span><span class="kn">import</span> <span class="n">new_server</span>
-<span class="n">s</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">new_server</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;your_password&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
-<span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-<p>If you see a version string printed, you're set. Next, run the simplest end‑to‑end recipe in <strong>Recipes → Create Model from JSON</strong>.</p>
+<h1 id="first-run-handshake-verification">First Run (Handshake Verification)<a class="headerlink" href="#first-run-handshake-verification" title="Permanent link">&para;</a></h1>
+<p>Use the tiny script created in <strong>Install &amp; Setup → Step 3</strong> to verify everything is wired up.</p>
+<p><strong>Run:</strong>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>docs/assets/code/connect_plaxis3d.py
+</code></pre></div></p>
+<p><strong>Expected:</strong>
+- PLAXIS 3D opens (or focuses if already open) and shows <strong>SERVER ACTIVE</strong>.
+- Terminal prints: <code>Connected. PLAXIS version: &lt;version&gt;</code>
+- No errors → you’re ready to build models and run calculations from Python.</p>
+<blockquote>
+<p>Tip: If PLAXIS is already open, you can enable the server from within PLAXIS and just run the <code>new_server(...)</code> part to connect.</p>
+</blockquote>
 
 
 
