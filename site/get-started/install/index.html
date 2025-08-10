@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-setup" class="md-skip">
+        <a href="#install-setup-plaxis-3d-steps-13" class="md-skip">
           Skip to content
         </a>
       
@@ -534,20 +534,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-python-environment" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Python environment
+      Before you start
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-plaxis-remote-scripting" class="md-nav__link">
+  <a href="#step-1-install-an-ide-vs-code" class="md-nav__link">
     <span class="md-ellipsis">
-      2) PLAXIS Remote Scripting
+      Step 1 — Install an IDE (VS Code)
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-activate-the-plaxis-python-environment-in-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Activate the PLAXIS Python environment in VS Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-connect-to-the-plaxis-3d-api-start-server-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — Connect to the PLAXIS 3D API (start server + handshake)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3 — Connect to the PLAXIS 3D API (start server + handshake)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1439,22 +1472,79 @@
 
 
 
-<h1 id="install-setup">Install &amp; Setup<a class="headerlink" href="#install-setup" title="Permanent link">&para;</a></h1>
-<h2 id="1-python-environment">1) Python environment<a class="headerlink" href="#1-python-environment" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># Windows: .venv\Scripts\activate</span>
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</code></pre></div>
-<h2 id="2-plaxis-remote-scripting">2) PLAXIS Remote Scripting<a class="headerlink" href="#2-plaxis-remote-scripting" title="Permanent link">&para;</a></h2>
+<h1 id="install-setup-plaxis-3d-steps-13">Install &amp; Setup (PLAXIS 3D) — Steps 1–3<a class="headerlink" href="#install-setup-plaxis-3d-steps-13" title="Permanent link">&para;</a></h1>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Ensure PLAXIS 3D is installed with the Python Remote Scripting interface.</li>
-<li>Enable the remote server (localhost, default port) in PLAXIS 3D.</li>
-<li>Verify connectivity with a short handshake (see <em>First Run</em>).</li>
+<li>Windows 10/11</li>
+<li><strong>PLAXIS 3D</strong> installed (CONNECT/2023+ with Remote Scripting)</li>
+<li>We’ll use the PLAXIS <strong>Python Distribution</strong> interpreter (or your own env)</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You do <strong>not</strong> need a web server. This documentation site can be hosted free on GitHub Pages or shipped as an offline HTML bundle.</p>
-</div>
+<blockquote>
+<p>PLAXIS exposes a Remote Scripting server and a Python wrapper (<code>plxscripting</code>). We’ll use that to automate PLAXIS 3D from Python.</p>
+</blockquote>
+<hr />
+<h2 id="step-1-install-an-ide-vs-code">Step 1 — Install an IDE (VS Code)<a class="headerlink" href="#step-1-install-an-ide-vs-code" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Download and install <strong>Visual Studio Code</strong> for Windows.</li>
+<li>Open VS Code → create/open a working folder (e.g. <code>plaxis3d-automation</code>).</li>
+<li>(Optional) Install the <strong>Python</strong> extension when prompted.</li>
+</ol>
+<hr />
+<h2 id="step-2-activate-the-plaxis-python-environment-in-vs-code">Step 2 — Activate the PLAXIS Python environment in VS Code<a class="headerlink" href="#step-2-activate-the-plaxis-python-environment-in-vs-code" title="Permanent link">&para;</a></h2>
+<p>Use the interpreter that ships with PLAXIS so you don’t worry about dependencies.</p>
+<p><strong>Common interpreter paths (adjust for your version):</strong>
+<div class="highlight"><pre><span></span><code>C:\ProgramData\Bentley\Geotechnical\PLAXIS Python Distribution V2\python\python.exe
+</code></pre></div>
+or (newer Seequent branding):
+<div class="highlight"><pre><span></span><code>C:\ProgramData\Seequent\PLAXIS Python Distribution V2\python\python.exe
+</code></pre></div></p>
+<p><strong>In VS Code:</strong>
+1. Press <strong>Ctrl+Shift+P</strong> → <strong>Python: Select Interpreter</strong>.
+2. Choose <strong>Enter interpreter path…</strong> and browse to the PLAXIS Python <code>python.exe</code> above.
+3. Open VS Code <strong>Terminal</strong>; it should now use that interpreter.</p>
+<blockquote>
+<p>Alternative: use your own env (Conda/venv) and run <code>pip install plxscripting</code>.</p>
+</blockquote>
+<hr />
+<h2 id="step-3-connect-to-the-plaxis-3d-api-start-server-handshake">Step 3 — Connect to the PLAXIS 3D API (start server + handshake)<a class="headerlink" href="#step-3-connect-to-the-plaxis-3d-api-start-server-handshake" title="Permanent link">&para;</a></h2>
+<p>We’ll launch <strong>PLAXIS 3D Input</strong> with the scripting server, then connect via <code>new_server</code>.</p>
+<p>The project includes a ready script at <code>docs/assets/code/connect_plaxis3d.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">plxscripting.easy</span><span class="w"> </span><span class="kn">import</span> <span class="n">new_server</span>
+
+<span class="c1"># Adjust path to your installed version:</span>
+<span class="n">PLAXIS3D_PATH</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\Bentley\Geotechnical\PLAXIS 3D CONNECT Edition V22\Plaxis3DInput.exe&quot;</span>
+<span class="c1"># Example for 2023.x under Seequent branding:</span>
+<span class="c1"># PLAXIS3D_PATH = r&quot;C:\Program Files\Seequent\PLAXIS 3D 2023.2\Plaxis3DInput.exe&quot;</span>
+
+<span class="n">PORT_INPUT</span>  <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">PASSWORD</span>    <span class="o">=</span> <span class="s2">&quot;MyStrongPwd123&quot;</span>
+
+<span class="c1"># Start PLAXIS 3D with the scripting server enabled</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">PLAXIS3D_PATH</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;--AppServerPassword=</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;--AppServerPort=</span><span class="si">{</span><span class="n">PORT_INPUT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span>
+    <span class="n">shell</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># give PLAXIS time to boot</span>
+
+<span class="c1"># Connect to the server</span>
+<span class="n">s_i</span><span class="p">,</span> <span class="n">g_i</span> <span class="o">=</span> <span class="n">new_server</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">PORT_INPUT</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">PASSWORD</span><span class="p">)</span>
+
+<span class="c1"># Smoke test</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected. PLAXIS version:&quot;</span><span class="p">,</span> <span class="n">g_i</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="n">g_i</span><span class="o">.</span><span class="n">gotostructures</span><span class="p">()</span>   <span class="c1"># harmless command to prove the session is live</span>
+<span class="n">s_i</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Run it from the VS Code terminal:</strong>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>docs/assets/code/connect_plaxis3d.py
+</code></pre></div></p>
+<p>You should see PLAXIS 3D open (SERVER ACTIVE) and a version string printed in the terminal.</p>
+<h3 id="quick-troubleshooting">Quick Troubleshooting<a class="headerlink" href="#quick-troubleshooting" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Connection error / timeout</strong> → Ensure the server is active, and your <code>PORT_INPUT</code> + <code>PASSWORD</code> match.</li>
+<li><strong>Executable path differs</strong> → Adjust <code>PLAXIS3D_PATH</code> for your installed version/vendor (“Bentley” vs “Seequent”).</li>
+<li><strong>Using your own Python env</strong> → <code>pip install plxscripting</code> and re-run.</li>
+</ul>
 
 
 
